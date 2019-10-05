@@ -1,9 +1,8 @@
 const express = require("express");
+const SessionControler = require("./controllers/SessionController");
 
 const routes = express.Router();
 
-routes.post("/", (req, res) => {
-    return res.json({ idade: req.query.idade });
-});
+routes.post("/sessions", SessionControler.store);
 
 module.exports = routes;
